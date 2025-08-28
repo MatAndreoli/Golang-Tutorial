@@ -16,8 +16,7 @@ var (
 )
 
 func setupLogOutput() {
-	f, err := os.Create("gin.log")
-	if err == nil {
+	if f, err := os.Create("gin.log"); err == nil {
 		gin.DefaultWriter = io.MultiWriter(f, os.Stdout)
 	}
 }

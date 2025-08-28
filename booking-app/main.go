@@ -95,7 +95,7 @@ func getUserInput() (string, string, string, uint) {
 	return firstName, lastName, email, userTickets
 }
 
-func bookTicket(firstName string, lastName string, userTickets uint, email string) {
+func bookTicket(firstName, lastName string, userTickets uint, email string) {
 	remainingTickets = remainingTickets - userTickets
 
 	userData := UserData{
@@ -111,7 +111,7 @@ func bookTicket(firstName string, lastName string, userTickets uint, email strin
 	fmt.Printf("%v tickets remaining for %v\n", remainingTickets, conferenceName)
 }
 
-func sendTicket(userTickets uint, firstName string, lastName string, email string) {
+func sendTicket(userTickets uint, firstName, lastName, email string) {
 	time.Sleep(10 * time.Second)
 	ticket := fmt.Sprintf("%v tickets for %v %v", userTickets, firstName, lastName)
 	fmt.Println("############################")
